@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Someone Special ✨</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 75, 110, 0.15);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            transition: all 0.4s ease;
+        }
+
+        h1 {
+            color: #ff4b6e;
+            font-size: 24px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            background-color: #fff;
+            color: #4a4a4a;
+            border: 2px solid #ffb3c6;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        /* The trick: when she hovers, all choices change to your secret answer */
+        .options-container:hover .btn {
+            color: #ff4b6e;
+            border-color: #ff4b6e;
+        }
+        
+        .options-container:hover .btn::after {
+            content: "apka message deka TU ab thk hun";
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .success-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .response-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quiz-card" class="card">
+        <h1>How are you beautiful lady? 😊</h1>
+        <div class="options-container">
+            <button class="btn" onclick="selectOption()">I am fine</button>
+            <button class="btn" onclick="selectOption()">apka message deka TU ab thk hun</button>
+            <button class="btn" onclick="selectOption()">mujai kia hee hona hai</button>
+            <button class="btn" onclick="selectOption()">thk hee hun</button>
+        </div>
+    </div>
+
+    <div id="result-card" class="card hidden">
+        <div class="success-icon">❤️</div>
+        <h1>You selected:</h1>
+        <p class="response-text">"apka message deka TU ab thk hun"</p>
+        <p style="color: #ff4b6e; font-weight: bold; font-size: 18px;">Knowing you are doing great just made my entire day! 🥰✨</p>
+    </div>
+
+    <script>
+        function selectOption() {
+            document.getElementById('quiz-card').classList.add('hidden');
+            document.getElementById('result-card').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
